@@ -1,0 +1,39 @@
+{
+  "name": "use-guarded-context",
+  "version": "0.1.0",
+  "description": "useContext with fail-fast assertion. Tests if provider is mounted and throws an error if not",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kardysm/use-guarded-context.git"
+  },
+  "keywords": [
+    "context",
+    "react",
+    "useContext",
+    "Typescript",
+    "useGuardedContext",
+    "assertion",
+    "fail-fast",
+    "failFast",
+    "react",
+    "context"
+  ],
+  "author": "[Michał Kardyś](michal@kardys.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kardysm/use-guarded-context/issues"
+  },
+  "homepage": "https://github.com/kardysm/use-guarded-context#readme",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "typescript": "^4.4.2"
+  }
+}
