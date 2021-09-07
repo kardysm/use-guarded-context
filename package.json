@@ -1,6 +1,6 @@
 {
   "name": "use-guarded-context",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "useContext with fail-fast assertion. Tests if provider is mounted and throws an error if not",
   "author": "kardysm",
   "license": "MIT",
