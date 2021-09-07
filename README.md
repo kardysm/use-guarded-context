@@ -1,30 +1,58 @@
 # use-guarded-context
-
-> useContext with fail-fast assertion. Tests if provider is mounted and throws an error if not
+useContext with fail-fast assertion. Tests if provider is mounted and throws an error if not
 
 [![NPM](https://img.shields.io/npm/v/use-guarded-context.svg)](https://www.npmjs.com/package/use-guarded-context) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+## How it works?
 
-```bash
-npm install --save use-guarded-context
+Hook uses `useContext` under the hood. It enhances original one with assertion - checks if value is other than `undefined` .
+
+What for?
+
+See example:
+
+## Example
+```typescript jsx
+interface ProviderValue{
+  someValue: unknown
+}
+// default value is undefined to fail fast
+// rather than spend hours on debugging
+const ExampleContext = React.createContext<ProviderValue | undefined>(undefined)
+
+//...
+
+const Component = () => {
+  // regularValue: ProviderValue | undefined
+  // you have to guard it by yourself
+  const regularValue = useContext(ExampleContext)
+
+  // safeValue: ProviderValue,
+  // safe to use
+  const safeValue = useGuardedContext(ExampleContext)
+
+  //...
+}
+
+```
+
+## Installation
+``` bash
+npm install use-guarded-context
+//or
+yarn add use-guarded-context
 ```
 
 ## Usage
 
-```tsx
-import React, { Component } from 'react'
+``` typescript
+    import {useGuardedContext} from 'use-guarded-context'
 
-import MyComponent from 'use-guarded-context'
-import 'use-guarded-context/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+    //in component
+    const yourContextValue = useGuardedContext(YourContext)
 ```
 
-## License
-
-MIT © [kardysm](https://github.com/kardysm)
+If provider is not mounted anywhere above, error is thrown:
+```
+`Provider for context ${context.displayName} is not mounted`
+```
