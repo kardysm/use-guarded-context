@@ -36,9 +36,9 @@ const Component = () => {
 
 ## Installation
 ``` bash
-npm install --save-dev use-guarded-context
+npm install use-guarded-context
 //or
-yarn add --dev use-guarded-context
+yarn add use-guarded-context
 ```
 
 ## Usage

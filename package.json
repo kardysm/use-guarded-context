@@ -1,6 +1,6 @@
 {
   "name": "use-guarded-context",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "useContext with fail-fast assertion. Tests if provider is mounted and throws an error if not",
   "main": "index.ts",
   "scripts": {
